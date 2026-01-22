@@ -95,12 +95,22 @@ while (continueProgram == true)
         // print current list of food items
         else if (choice == 2)
         {
-            Console.WriteLine("Food Item List: \n");
-            for (int i = 0; i < foodItems.Count; i++)
+            if (foodItems.Count == 0)
             {
-                // call printfoodinfo method for each food item
-                foodItems[i].PrintFoodInfo();
+                Console.WriteLine("No food items in the inventory.\n");
+                continue;
             }
+
+            else
+            {
+                Console.WriteLine("Food Item List: \n");
+                for (int i = 0; i < foodItems.Count; i++)
+                {
+                    // call printfoodinfo method for each food item
+                    foodItems[i].PrintFoodInfo();
+                }
+            }
+            
         }
 
         // exit program
